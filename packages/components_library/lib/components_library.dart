@@ -1,7 +1,4 @@
 library components_library;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/gaps.dart';
+export 'src/primary_button.dart';

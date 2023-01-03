@@ -1,0 +1,125 @@
+{
+          // Use IntelliSense to learn about possible attributes.
+          // Hover to view descriptions of existing attributes.
+          // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+          "version": "0.2.0",
+          "configurations": [
+                    {
+                              "name": "pln_mobile_clone",
+                              "request": "launch",
+                              "type": "dart"
+                    },
+                    {
+                              "name": "pln_mobile_clone (profile mode)",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "profile"
+                    },
+                    {
+                              "name": "pln_mobile_clone (release mode)",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "release"
+                    },
+                    {
+                              "name": "components_library",
+                              "cwd": "packages\\components_library",
+                              "request": "launch",
+                              "type": "dart"
+                    },
+                    {
+                              "name": "components_library (profile mode)",
+                              "cwd": "packages\\components_library",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "profile"
+                    },
+                    {
+                              "name": "components_library (release mode)",
+                              "cwd": "packages\\components_library",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "release"
+                    },
+                    {
+                              "name": "style_resources",
+                              "cwd": "packages\\style_resources",
+                              "request": "launch",
+                              "type": "dart"
+                    },
+                    {
+                              "name": "style_resources (profile mode)",
+                              "cwd": "packages\\style_resources",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "profile"
+                    },
+                    {
+                              "name": "style_resources (release mode)",
+                              "cwd": "packages\\style_resources",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "release"
+                    },
+                    {
+                              "name": "onboarding",
+                              "cwd": "packages\\features\\onboarding",
+                              "request": "launch",
+                              "type": "dart"
+                    },
+                    {
+                              "name": "onboarding (profile mode)",
+                              "cwd": "packages\\features\\onboarding",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "profile"
+                    },
+                    {
+                              "name": "onboarding (release mode)",
+                              "cwd": "packages\\features\\onboarding",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "release"
+                    },
+                    {
+                              "name": "signin",
+                              "cwd": "packages\\features\\signin",
+                              "request": "launch",
+                              "type": "dart"
+                    },
+                    {
+                              "name": "signin (profile mode)",
+                              "cwd": "packages\\features\\signin",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "profile"
+                    },
+                    {
+                              "name": "signin (release mode)",
+                              "cwd": "packages\\features\\signin",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "release"
+                    },
+                    {
+                              "name": "signup",
+                              "cwd": "packages\\features\\signup",
+                              "request": "launch",
+                              "type": "dart"
+                    },
+                    {
+                              "name": "signup (profile mode)",
+                              "cwd": "packages\\features\\signup",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "profile"
+                    },
+                    {
+                              "name": "signup (release mode)",
+                              "cwd": "packages\\features\\signup",
+                              "request": "launch",
+                              "type": "dart",
+                              "flutterMode": "release"
+                    }
+          ]
+}
