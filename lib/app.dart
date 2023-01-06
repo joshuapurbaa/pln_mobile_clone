@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:onboarding/onboarding.dart';
+import 'package:provider/provider.dart';
+import 'package:signin/signin.dart';
 import 'package:style_resources/style_resources.dart';
 
 class App extends StatelessWidget {
@@ -13,11 +14,20 @@ class App extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'PLN Mobile Clone',
-          theme: AppTheme.light(),
-          home: const OnboardingScreen(),
+        return ChangeNotifierProvider(
+          create: (context) => SignInProvider(),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'PLN Mobile Clone',
+            theme: AppTheme.light(),
+            routes: {
+              '/': (context) => const SignInScreen(),
+              '/signin-with-another': (context) =>
+                  const SignInAnotherMethodScreen(),
+              '/signin-with-email': (context) => const SignInWithEmailScreen(),
+              '/lupa-passoword': (context) => const LupaPasswordScreen(),
+            },
+          ),
         );
       },
     );

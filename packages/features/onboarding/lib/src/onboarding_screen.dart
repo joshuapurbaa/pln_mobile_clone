@@ -80,7 +80,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Padding(
               padding: EdgeInsets.only(bottom: AppSize.size30),
               child: isLastIndex
-                  ? const PrimaryButton()
+                  ? const PrimaryButton(
+                      color: AppPalette.primaryBlue,
+                      buttonLabel: 'Lanjutkan',
+                    )
                   : DotIndicator(controller: _controller),
             ),
           ),

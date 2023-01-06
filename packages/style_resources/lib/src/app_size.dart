@@ -7,14 +7,14 @@ class AppSize {
   static double displayMedium = 45.sp;
   static double displaySmall = 36.sp;
   static double headlineLarge = 32.sp;
-  static double headlineMedium = 28.sp;
+  static double headlineMedium = 27.sp;
   static double headlineSmall = 24.sp;
   static double titleLarge = 22.sp;
-  static double titleMedium = 15.sp;
+  static double titleMedium = 18.sp;
   static double titleSmall = 14.sp;
   static double labelLarge = 20.sp;
-  static double labelMedium = 14.sp;
-  static double labelSmall = 13.sp;
+  static double labelMedium = 15.sp;
+  static double labelSmall = 15.sp;
   static double bodyLarge = 18.sp;
   static double bodyMedium = 15.sp;
   static double bodySmall = 14.sp;
@@ -23,6 +23,8 @@ class AppSize {
   static double size5 = 5.w;
   static double size8 = 8.w;
   static double size10 = 10.w;
+  static double size12 = 12.w;
+  static double size13 = 13.w;
   static double size15 = 15.w;
   static double size20 = 20.w;
   static double size24 = 24.w;
@@ -34,4 +36,7 @@ class AppSize {
   static double size55 = 55.w;
   static double size60 = 60.w;
   static double size70 = 70.w;
+  static double size100 = 100.w;
+  static double size180 = 180.w;
+  static double size200 = 200.w;
 }

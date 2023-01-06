@@ -24,11 +24,13 @@ class AppTheme {
       fontSize: AppSize.headlineLarge,
       fontWeight: FontWeight.w500,
     ),
+    // SignInWithOtherMethod (bottomSheet)
     headlineMedium: GoogleFonts.nunitoSans(
       fontSize: AppSize.headlineMedium,
       fontWeight: FontWeight.w500,
+      color: AppPalette.black,
     ),
-    // OB,
+    // OB,SignIn
     headlineSmall: GoogleFonts.nunitoSans(
       fontSize: AppSize.headlineSmall,
       fontWeight: FontWeight.w700,
@@ -37,9 +39,11 @@ class AppTheme {
       fontSize: AppSize.titleLarge,
       fontWeight: FontWeight.w500,
     ),
+    // SigninWithEmail (AppBar)
     titleMedium: GoogleFonts.nunitoSans(
       fontSize: AppSize.titleMedium,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
+      color: AppPalette.black,
     ),
     // OB(Appbar)
     titleSmall: GoogleFonts.nunitoSans(
@@ -51,26 +55,31 @@ class AppTheme {
       fontSize: AppSize.labelLarge,
       fontWeight: FontWeight.w500,
     ),
+    // Ob(Button)
     labelMedium: GoogleFonts.nunitoSans(
       fontSize: AppSize.labelMedium,
       fontWeight: FontWeight.w500,
+      color: AppPalette.white,
+      letterSpacing: 0.25,
     ),
+    // SignIn (hintText)
     labelSmall: GoogleFonts.nunitoSans(
       fontSize: AppSize.labelSmall,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
+      color: AppPalette.tFieldHintText,
+      letterSpacing: 0.10,
     ),
     bodyLarge: GoogleFonts.nunitoSans(
       fontSize: AppSize.bodyLarge,
       fontWeight: FontWeight.w500,
     ),
-    // OB(button)
+    // SignIn
     bodyMedium: GoogleFonts.nunitoSans(
       fontSize: AppSize.bodyMedium,
-      fontWeight: FontWeight.w500,
-      color: AppPalette.white,
-      letterSpacing: 0.25,
+      fontWeight: FontWeight.w600,
+      color: AppPalette.black,
     ),
-    // OB,
+    // OB,SignIn(bottomSheet)
     bodySmall: GoogleFonts.nunitoSans(
       fontSize: AppSize.bodySmall,
       fontWeight: FontWeight.w400,
@@ -82,11 +91,12 @@ class AppTheme {
     return ThemeData(
         brightness: Brightness.light,
         appBarTheme: const AppBarTheme(
+          foregroundColor: AppPalette.black,
           titleSpacing: 0,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
           ),
-          color: AppPalette.white,
+          backgroundColor: AppPalette.white,
           elevation: 0,
         ),
         textTheme: lighTextTheme,
@@ -94,7 +104,6 @@ class AppTheme {
           // prefixIconColor: AppPalette.darkBlue,
           isDense: true,
           border: OutlineInputBorder(
-            borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(15),
           ),
           // fillColor: AppPalette.greyColor2,

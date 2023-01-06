@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:signup/signup.dart';
+import 'package:beranda/beranda.dart';
 
 void main() {
   test('adds one to input values', () {

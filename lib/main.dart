@@ -5,6 +5,7 @@ import 'app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   SharedPreferences.getInstance().then(
     (value) {
       runApp(const App());
