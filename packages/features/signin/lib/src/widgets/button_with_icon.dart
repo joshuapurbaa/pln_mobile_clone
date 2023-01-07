@@ -81,7 +81,7 @@ class ButtonWithIcon extends StatelessWidget {
           );
         } else {
           if (ctx != null && goTo != null) {
-            AppNavigation.goTo(ctx!, goTo!);
+            AppNavigation.goNamed(ctx!, goTo!);
           }
         }
       },

@@ -1,9 +1,9 @@
 import 'package:components_library/components_library.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:signin/signin.dart';
 import 'package:signin/src/widgets/privacy_checkbox.dart';
-import 'package:signup/signup.dart';
 import 'package:style_resources/style_resources.dart';
 
 import '../widgets/appbar_content.dart';
@@ -34,7 +34,7 @@ class SignInAnotherMethodScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.all(AppSize.size10),
+              padding: EdgeInsets.all(AppSize.size15),
               child: Consumer<SignInProvider>(
                 builder: (context, provider, child) {
                   final val = provider.signInChoicesVal;
@@ -46,7 +46,7 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                         label: 'Masuk dengan Google',
                         bgColor: AppPalette.white,
                       ),
-                      const Gaps(vertical: 5),
+                      const Gaps(vertical: 7),
                       ButtonWithIcon(
                         imagePath: 'assets/mail.png',
                         label: 'Masuk dengan Email',
@@ -57,7 +57,7 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                         ctx: context,
                         goTo: '/signin-with-email',
                       ),
-                      const Gaps(vertical: 5),
+                      const Gaps(vertical: 7),
                       if (val)
                         const ButtonWithIcon(
                           imagePath: 'assets/phone.png',
@@ -67,7 +67,7 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                           labelColor: AppPalette.white,
                           iconColor: AppPalette.white,
                         ),
-                      const Gaps(vertical: 8),
+                      const Gaps(vertical: 7),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppPalette.grey,
@@ -76,7 +76,8 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                           provider.openChoices();
                         },
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: AppSize.size20),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -114,14 +115,10 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                                   ),
                             ),
                             TextSpan(
-                              onEnter: (event) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SignupScreen(),
-                                  ),
-                                );
-                              },
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.pushNamed(context, '/signup');
+                                },
                               text: 'Daftar sekarang',
                               style: Theme.of(context)
                                   .textTheme

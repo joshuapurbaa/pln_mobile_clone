@@ -16,13 +16,13 @@ class SignInWithEmailScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const Gaps(vertical: 20),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSize.size10),
-            child: TextFormField(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: AppSize.size15),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const Gaps(vertical: 20),
+            TextFormField(
               keyboardType: TextInputType.emailAddress,
               autofocus: true,
               decoration: AppStyle.inputDecoration(
@@ -31,11 +31,8 @@ class SignInWithEmailScreen extends StatelessWidget {
                 hint: 'email@email.com',
               ),
             ),
-          ),
-          const Gaps(vertical: 20),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSize.size10),
-            child: TextFormField(
+            const Gaps(vertical: 20),
+            TextFormField(
               obscureText: true,
               decoration: AppStyle.inputDecoration(
                 context,
@@ -43,15 +40,12 @@ class SignInWithEmailScreen extends StatelessWidget {
                 hint: 'Password',
               ),
             ),
-          ),
-          const Gaps(vertical: 30),
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: Align(
+            const Gaps(vertical: 30),
+            Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
                 onTap: () {
-                  AppNavigation.goTo(context, '/lupa-passoword');
+                  AppNavigation.goNamed(context, '/lupa-passoword');
                 },
                 child: Text(
                   'Lupa Password',
@@ -62,14 +56,14 @@ class SignInWithEmailScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          const Spacer(),
-          const PrimaryButton(
-            color: AppPalette.primaryBlue,
-            buttonLabel: 'Masuk',
-          ),
-          const Gaps(vertical: 30),
-        ],
+            const Spacer(),
+            const PrimaryButton(
+              color: AppPalette.primaryBlue,
+              buttonLabel: 'Masuk',
+            ),
+            const Gaps(vertical: 30),
+          ],
+        ),
       ),
     );
   }

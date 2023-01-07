@@ -15,24 +15,21 @@ class LupaPasswordScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const Gaps(vertical: 40),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSize.size10),
-            child: Text(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: AppSize.size15),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const Gaps(vertical: 40),
+            Text(
               'Masukkan email Anda dan kami akan mengirim email dengan instruksi untuk mengatur ulang kata sanda Anda',
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!
                   .copyWith(color: AppPalette.textGrey),
             ),
-          ),
-          const Gaps(vertical: 20),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSize.size10),
-            child: TextFormField(
+            const Gaps(vertical: 20),
+            TextFormField(
               keyboardType: TextInputType.emailAddress,
               autofocus: true,
               decoration: AppStyle.inputDecoration(
@@ -41,14 +38,14 @@ class LupaPasswordScreen extends StatelessWidget {
                 hint: 'email@email.com',
               ),
             ),
-          ),
-          const Spacer(),
-          const PrimaryButton(
-            color: AppPalette.primaryBlue,
-            buttonLabel: 'Masuk',
-          ),
-          const Gaps(vertical: 30),
-        ],
+            const Spacer(),
+            const PrimaryButton(
+              color: AppPalette.primaryBlue,
+              buttonLabel: 'Masuk',
+            ),
+            const Gaps(vertical: 30),
+          ],
+        ),
       ),
     );
   }

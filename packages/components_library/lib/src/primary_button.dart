@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:style_resources/style_resources.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
@@ -14,17 +13,14 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: AppSize.size10),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: color),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text(
-            buttonLabel,
-            style: Theme.of(context).textTheme.labelMedium,
-          ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(backgroundColor: color),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Text(
+          buttonLabel,
+          style: Theme.of(context).textTheme.labelMedium,
         ),
       ),
     );

@@ -4,9 +4,15 @@ import 'package:style_resources/style_resources.dart';
 class AppStyle {
   AppStyle._();
 
-  static InputDecoration inputDecoration(BuildContext context,
-      {required String label, required String hint, Widget? prefix}) {
+  static InputDecoration inputDecoration(
+    BuildContext context, {
+    required String label,
+    required String hint,
+    Widget? prefix,
+    Widget? suffix,
+  }) {
     return InputDecoration(
+      suffixIcon: suffix,
       prefix: prefix,
       labelText: label,
       labelStyle: Theme.of(context).textTheme.labelSmall,

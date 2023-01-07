@@ -332,7 +332,7 @@ packages:
     source: path
     version: "0.0.0"
   signup:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/features/signup"
       relative: true

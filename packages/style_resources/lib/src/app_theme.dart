@@ -16,6 +16,7 @@ class AppTheme {
       fontSize: AppSize.displayMedium,
       fontWeight: FontWeight.w500,
     ),
+
     displaySmall: GoogleFonts.nunitoSans(
       fontSize: AppSize.displaySmall,
       fontWeight: FontWeight.w500,
@@ -30,7 +31,7 @@ class AppTheme {
       fontWeight: FontWeight.w500,
       color: AppPalette.black,
     ),
-    // OB,SignIn
+    // OB,SignIn, SignUp
     headlineSmall: GoogleFonts.nunitoSans(
       fontSize: AppSize.headlineSmall,
       fontWeight: FontWeight.w700,
@@ -69,11 +70,13 @@ class AppTheme {
       color: AppPalette.tFieldHintText,
       letterSpacing: 0.10,
     ),
+    //SignUp
     bodyLarge: GoogleFonts.nunitoSans(
       fontSize: AppSize.bodyLarge,
       fontWeight: FontWeight.w500,
+      color: AppPalette.textGrey,
     ),
-    // SignIn
+    // SignIn,
     bodyMedium: GoogleFonts.nunitoSans(
       fontSize: AppSize.bodyMedium,
       fontWeight: FontWeight.w600,
@@ -104,7 +107,7 @@ class AppTheme {
           // prefixIconColor: AppPalette.darkBlue,
           isDense: true,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(5),
           ),
           // fillColor: AppPalette.greyColor2,
           filled: true,

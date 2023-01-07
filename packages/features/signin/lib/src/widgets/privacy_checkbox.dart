@@ -33,22 +33,28 @@ class TermsCheckbox extends StatelessWidget {
             children: [
               TextSpan(
                 text: 'Dengan masuk dan daftar akun, Anda menyetujui ',
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontSize: AppSize.size13,
+                    ),
               ),
               TextSpan(
                 text: 'Syarat\ndan Ketentuan ',
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       color: AppPalette.primaryBlue,
+                      fontSize: AppSize.size13,
                     ),
               ),
               TextSpan(
                 text: 'serta ',
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontSize: AppSize.size13,
+                    ),
               ),
               TextSpan(
                 text: 'Kebijakan Privasi',
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       color: AppPalette.primaryBlue,
+                      fontSize: AppSize.size13,
                     ),
               ),
             ],

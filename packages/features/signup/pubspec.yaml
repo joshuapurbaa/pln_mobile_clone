@@ -7,6 +7,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  style_resources:
+    path: ../../style_resources
+  components_library:
+    path: ../../components_library
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,5 @@
 import 'package:components_library/components_library.dart';
 import 'package:flutter/material.dart';
-import 'package:signin/signin.dart';
 
 import 'package:style_resources/style_resources.dart';
 
@@ -21,9 +20,10 @@ class _SignInBodyState extends State<SignInBody> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: EdgeInsets.symmetric(horizontal: AppSize.size15),
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSize.size30),
+          padding: EdgeInsets.symmetric(horizontal: AppSize.size20),
           child: Image.asset(
             'assets/signin1.png',
             package: 'signin',
@@ -37,33 +37,30 @@ class _SignInBodyState extends State<SignInBody> {
           ),
         ),
         const Gaps(vertical: 20),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSize.size10),
-          child: TextField(
-            keyboardType: TextInputType.phone,
-            decoration: AppStyle.inputDecoration(
-              context,
-              prefix: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    'assets/indonesia_flag.png',
-                    package: 'signin',
-                    width: 20,
-                  ),
-                  const Gaps(horizontal: 10),
-                  Text(
-                    '+62  ',
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelSmall!
-                        .copyWith(color: AppPalette.black),
-                  )
-                ],
-              ),
-              label: 'Masukan nomor HP',
-              hint: '85123456789',
+        TextField(
+          keyboardType: TextInputType.phone,
+          decoration: AppStyle.inputDecoration(
+            context,
+            prefix: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(
+                  'assets/indonesia_flag.png',
+                  package: 'signin',
+                  width: 20,
+                ),
+                const Gaps(horizontal: 10),
+                Text(
+                  '+62  ',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelSmall!
+                      .copyWith(color: AppPalette.black),
+                )
+              ],
             ),
+            label: 'Masukan nomor HP',
+            hint: '85123456789',
           ),
         ),
         const Gaps(vertical: 20),
@@ -74,12 +71,8 @@ class _SignInBodyState extends State<SignInBody> {
         const Gaps(vertical: 20),
         Center(
           child: GestureDetector(
-            onTap: () => Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const SignInAnotherMethodScreen(),
-              ),
-            ),
+            onTap: () =>
+                Navigator.pushReplacementNamed(context, '/signin-with-another'),
             child: Text(
               'Masuk menggunakan metode lain',
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
