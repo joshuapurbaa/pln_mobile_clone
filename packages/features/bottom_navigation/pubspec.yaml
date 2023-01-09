@@ -1,4 +1,4 @@
-name: beranda
+name: bottom_navigation
 publish_to: none
 
 environment:
@@ -12,13 +12,16 @@ dependencies:
     path: ../../style_resources
   components_library:
     path: ../../components_library
+  go_router: ^6.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
 
+
 flutter:
 
   assets:
     - assets/
+  

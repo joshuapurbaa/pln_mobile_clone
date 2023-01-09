@@ -39,6 +39,9 @@ class AppSize {
   static double size60 = 60.w;
   static double size70 = 70.w;
   static double size100 = 100.w;
+  static double size110 = 110.w;
+  static double size120 = 120.w;
+  static double size150 = 150.w;
   static double size180 = 180.w;
   static double size200 = 200.w;
 }
