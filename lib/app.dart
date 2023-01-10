@@ -15,8 +15,12 @@ class App extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return ChangeNotifierProvider(
-          create: (context) => SignInProvider(),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => SignInProvider(),
+            ),
+          ],
           child: MaterialApp.router(
             debugShowCheckedModeBanner: false,
             title: 'PLN Mobile Clone',

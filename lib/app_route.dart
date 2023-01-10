@@ -6,44 +6,12 @@ import 'package:go_router/go_router.dart';
 import 'package:notification/notification.dart';
 import 'package:point/point.dart';
 import 'package:profile/profile.dart';
-import 'package:style_resources/style_resources.dart';
 
 class AppRoute {
   AppRoute._();
   // private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
   static final _shellNavigatorKey = GlobalKey<NavigatorState>();
-
-  static final tabs = [
-    NavBarTabItem(
-      initialLocation: '/beranda',
-      icon: Image.asset(
-        'assets/home.png',
-        width: AppSize.size30,
-      ),
-      label: 'Beranda',
-    ),
-    NavBarTabItem(
-      initialLocation: '/activity',
-      icon: Image.asset('assets/activity.png'),
-      label: 'Aktivitas',
-    ),
-    NavBarTabItem(
-      initialLocation: '/point',
-      icon: Image.asset('assets/point.png'),
-      label: 'PLN Point',
-    ),
-    NavBarTabItem(
-      initialLocation: '/notification',
-      icon: Image.asset('assets/notification.png'),
-      label: 'Notifikasi',
-    ),
-    NavBarTabItem(
-      initialLocation: '/profile',
-      icon: Image.asset('assets/profile.png'),
-      label: 'Profile',
-    ),
-  ];
 
   static final goRouter = GoRouter(
     initialLocation: '/beranda',
@@ -53,7 +21,7 @@ class AppRoute {
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
         builder: (context, state, child) {
-          return BottomNavBar(tabs: tabs, child: child);
+          return BottomNavBar(child: child);
         },
         routes: [
           // Products

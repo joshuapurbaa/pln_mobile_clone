@@ -13,6 +13,7 @@ dependencies:
   components_library:
     path: ../../components_library
   go_router: ^6.0.1
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
