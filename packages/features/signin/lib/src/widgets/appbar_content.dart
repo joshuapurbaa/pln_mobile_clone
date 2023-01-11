@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:style_resources/style_resources.dart';
 
+import 'widgets.dart';
+
 class AppBarContent extends StatelessWidget {
   const AppBarContent({
     Key? key,
@@ -11,14 +13,14 @@ class AppBarContent extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Hai, Electrizen!',
+          Strings.appBar,
           style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                 color: AppPalette.primaryBlue,
                 fontWeight: FontWeight.w400,
               ),
         ),
         Text(
-          'Selamat datang di PLN Mobile',
+          Strings.appBar2,
           style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                 color: AppPalette.black,
                 fontWeight: FontWeight.w400,

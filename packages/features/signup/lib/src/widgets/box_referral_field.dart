@@ -2,17 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:style_resources/style_resources.dart';
 
-class ReferralBoxField extends StatefulWidget {
+class ReferralBoxField extends StatelessWidget {
   const ReferralBoxField({
     Key? key,
   }) : super(key: key);
 
-  @override
-  State<ReferralBoxField> createState() => _ReferralBoxFieldState();
-}
-
-class _ReferralBoxFieldState extends State<ReferralBoxField> {
-  GlobalKey dataKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return SizedBox(

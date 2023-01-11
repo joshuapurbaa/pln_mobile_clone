@@ -1,6 +1,5 @@
+import 'package:core/core.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:pln_mobile_clone/dependencies_injection.dart';
-import 'package:pln_mobile_clone/pref_manager.dart';
 
 class AppStateManager extends ChangeNotifier {
   bool _signedIn = false;

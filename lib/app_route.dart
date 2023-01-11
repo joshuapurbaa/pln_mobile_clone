@@ -1,14 +1,11 @@
-import 'dart:developer';
-
 import 'package:activity/activity.dart';
 import 'package:beranda/beranda.dart';
 import 'package:bottom_navigation/bottom_navigation.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notification/notification.dart';
 import 'package:onboarding/onboarding.dart';
-import 'package:pln_mobile_clone/app_state_manager.dart';
-import 'package:pln_mobile_clone/dependencies_injection.dart';
 import 'package:point/point.dart';
 import 'package:profile/profile.dart';
 import 'package:signin/signin.dart';
@@ -69,7 +66,6 @@ class AppRoute {
             path: Routes.signinWithEmail.name,
             name: Routes.signinWithEmail.name,
             builder: (context, state) {
-              log(state.fullpath!);
               return const SignInWithEmailScreen();
             },
             routes: [
@@ -151,27 +147,21 @@ class AppRoute {
       final bool isSignedIn = sl<AppStateManager>().isSignedIn;
 
       if (!isOnboardingComplete) {
-        log('1');
         return onBoarding;
       }
       if (isOnboardingComplete && currentSubloc == onBoarding) {
-        log('1,5');
         return signin;
       }
 
       if (!isSignedIn && currentSubloc == profile) {
-        log('2');
         return auth ? currentSubloc : signin;
       }
 
       if (!isSignedIn) {
-        log('3');
-        log(currentSubloc);
         return auth ? null : currentSubloc;
       }
 
       if (auth && isSignedIn) {
-        log('4');
         return root;
       }
 

@@ -2,7 +2,7 @@ import 'package:components_library/components_library.dart';
 import 'package:flutter/material.dart';
 import 'package:style_resources/style_resources.dart';
 
-import 'widgets/referral_container.dart';
+import 'widgets/widgets.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -12,7 +12,7 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Daftar Akun',
+          Strings.appBar,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         centerTitle: true,
@@ -26,8 +26,8 @@ class SignupScreen extends StatelessWidget {
             autofocus: true,
             decoration: AppStyle.inputDecoration(
               context,
-              label: 'Nama Lengkap',
-              hint: 'Electrizen',
+              label: Strings.label1,
+              hint: Strings.hint1,
             ),
           ),
           const Gaps(vertical: 25),
@@ -35,8 +35,8 @@ class SignupScreen extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             decoration: AppStyle.inputDecoration(
               context,
-              label: 'Email',
-              hint: 'Email',
+              label: Strings.label2,
+              hint: Strings.hint2,
             ),
           ),
           const Gaps(vertical: 25),
@@ -44,8 +44,8 @@ class SignupScreen extends StatelessWidget {
             keyboardType: TextInputType.phone,
             decoration: AppStyle.inputDecoration(
               context,
-              label: 'No. Handphone',
-              hint: 'No. Handphone',
+              label: Strings.label3,
+              hint: Strings.hint3,
             ),
           ),
           const Gaps(vertical: 25),
@@ -53,8 +53,8 @@ class SignupScreen extends StatelessWidget {
             obscureText: true,
             decoration: AppStyle.inputDecoration(
               context,
-              label: 'Password',
-              hint: 'Password',
+              label: Strings.label4,
+              hint: Strings.hint4,
               suffix: const Icon(Icons.visibility_off),
             ),
           ),
@@ -63,8 +63,8 @@ class SignupScreen extends StatelessWidget {
             obscureText: true,
             decoration: AppStyle.inputDecoration(
               context,
-              label: 'Masukan Ulang Password',
-              hint: 'Masukan Ulang Password',
+              label: Strings.label5,
+              hint: Strings.hint5,
               suffix: const Icon(Icons.visibility_off),
             ),
           ),
@@ -74,7 +74,7 @@ class SignupScreen extends StatelessWidget {
           PrimaryButton(
             onTap: () {},
             color: AppPalette.primaryBlue,
-            buttonLabel: 'Daftar',
+            buttonLabel: Strings.button,
           ),
         ],
       ),

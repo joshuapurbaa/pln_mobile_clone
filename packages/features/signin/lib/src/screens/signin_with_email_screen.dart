@@ -1,7 +1,8 @@
 import 'package:components_library/components_library.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:pln_mobile_clone/app_route.dart';
-import 'package:pln_mobile_clone/app_state_manager.dart';
+
 import 'package:provider/provider.dart';
 import 'package:signin/src/helper/navigation.dart';
 import 'package:style_resources/style_resources.dart';

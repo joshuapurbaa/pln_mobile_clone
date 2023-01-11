@@ -14,6 +14,8 @@ dependencies:
     path: ../../components_library
   pln_mobile_clone:
     path: ../../../../pln_mobile_clone
+  core:
+    path: ../../core
 
   provider: ^6.0.5
   go_router: ^6.0.1

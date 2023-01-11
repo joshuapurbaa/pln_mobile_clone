@@ -30,7 +30,7 @@ class _SigninWithAnotherMethodScreenState
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: const Duration(milliseconds: 1500), vsync: this);
+        duration: const Duration(milliseconds: 1200), vsync: this);
 
     final Animation<double> curve =
         CurvedAnimation(parent: _controller, curve: Curves.easeInCubic);
@@ -83,6 +83,7 @@ class _SigninWithAnotherMethodScreenState
                   child: Consumer<SignInProvider>(
                     builder: (context, provider, child) {
                       final val = provider.signInChoicesVal;
+                      final textTheme = provider.textTheme(context);
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -103,8 +104,9 @@ class _SigninWithAnotherMethodScreenState
                             goTo: Routes.signinWithEmail.name,
                           ),
                           const Gaps(vertical: 7),
-                          if (val)
-                            const ButtonWithIcon(
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: const ButtonWithIcon(
                               imagePath: 'assets/phone.png',
                               label: 'Masuk dengan No. Handphone',
                               bgColor: AppPalette.primaryBlue,
@@ -112,6 +114,14 @@ class _SigninWithAnotherMethodScreenState
                               labelColor: AppPalette.white,
                               iconColor: AppPalette.white,
                             ),
+                            crossFadeState: val
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            firstCurve: Curves.easeIn,
+                            secondCurve: Curves.easeInOut,
+                            sizeCurve: Curves.easeInOutCirc,
+                            duration: const Duration(milliseconds: 400),
+                          ),
                           const Gaps(vertical: 7),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
@@ -128,12 +138,9 @@ class _SigninWithAnotherMethodScreenState
                                 children: [
                                   Text(
                                     val ? 'Tutup' : 'Lihat Semua Pilihan',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelMedium!
-                                        .copyWith(
-                                          color: AppPalette.black,
-                                        ),
+                                    style: textTheme.labelMedium!.copyWith(
+                                      color: AppPalette.black,
+                                    ),
                                   ),
                                   Icon(
                                     val
@@ -152,12 +159,9 @@ class _SigninWithAnotherMethodScreenState
                               children: [
                                 TextSpan(
                                   text: 'Belum punya akun? ',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                  style: textTheme.bodySmall!.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
@@ -165,13 +169,10 @@ class _SigninWithAnotherMethodScreenState
                                       context.goNamed(Routes.signup.name);
                                     },
                                   text: 'Daftar sekarang',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                        color: AppPalette.primaryBlue,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                  style: textTheme.bodySmall!.copyWith(
+                                    color: AppPalette.primaryBlue,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ],
                             ),

@@ -14,7 +14,9 @@ dependencies:
     path: ../../components_library
   pln_mobile_clone:
     path: ../../../../pln_mobile_clone
-
+  core:
+    path: ../../core
+    
   smooth_page_indicator: ^1.0.0+2
   provider: ^6.0.5
 

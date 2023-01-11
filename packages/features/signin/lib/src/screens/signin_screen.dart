@@ -10,12 +10,17 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppPalette.lightGrey,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         toolbarHeight: 100,
         centerTitle: true,
         title: const AppBarContent(),
       ),
-      body: const SignInBody(),
+      body: Stack(
+        children: const [
+          SignInBody(),
+        ],
+      ),
     );
   }
 }

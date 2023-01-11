@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  core:
+    path: packages/core
   style_resources:
     path: packages/style_resources
   onboarding: 
