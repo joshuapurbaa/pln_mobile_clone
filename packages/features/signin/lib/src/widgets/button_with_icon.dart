@@ -5,6 +5,7 @@ import 'package:signin/signin.dart';
 import 'package:style_resources/style_resources.dart';
 
 import '../helper/navigation.dart';
+import 'bottom_sheet_warning.dart';
 
 class ButtonWithIcon extends StatelessWidget {
   const ButtonWithIcon({
@@ -47,36 +48,7 @@ class ButtonWithIcon extends StatelessWidget {
                     top: Radius.circular(AppSize.size20))),
             context: context,
             builder: (context) {
-              return Container(
-                height: AppSize.size180,
-                padding: EdgeInsets.all(AppSize.size10),
-                decoration: BoxDecoration(
-                    color: AppPalette.white,
-                    borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(AppSize.size20))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Gaps(vertical: 4),
-                    Text(
-                      'Informasi',
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                    Text(
-                      'Mohon Anda dapat menyetujui syarat dan Ketentuan serta Kebijakan Privasi terlebih dahulu',
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: AppPalette.textGrey,
-                            fontSize: AppSize.size12,
-                          ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const PrimaryButton(
-                      color: AppPalette.primaryBlue,
-                      buttonLabel: 'OK',
-                    )
-                  ],
-                ),
-              );
+              return const BottomSheetWarning();
             },
           );
         } else {

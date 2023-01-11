@@ -1,5 +1,8 @@
 import 'package:components_library/components_library.dart';
 import 'package:flutter/material.dart';
+import 'package:pln_mobile_clone/app_route.dart';
+import 'package:pln_mobile_clone/app_state_manager.dart';
+import 'package:provider/provider.dart';
 import 'package:signin/src/helper/navigation.dart';
 import 'package:style_resources/style_resources.dart';
 
@@ -45,7 +48,7 @@ class SignInWithEmailScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: GestureDetector(
                 onTap: () {
-                  AppNavigation.goNamed(context, '/lupa-passoword');
+                  AppNavigation.goNamed(context, Routes.lupaPassword.name);
                 },
                 child: Text(
                   'Lupa Password',
@@ -57,7 +60,10 @@ class SignInWithEmailScreen extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            const PrimaryButton(
+            PrimaryButton(
+              onTap: () {
+                Provider.of<AppStateManager>(context, listen: false).signin();
+              },
               color: AppPalette.primaryBlue,
               buttonLabel: 'Masuk',
             ),

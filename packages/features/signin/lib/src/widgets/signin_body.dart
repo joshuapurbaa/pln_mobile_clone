@@ -1,5 +1,7 @@
 import 'package:components_library/components_library.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pln_mobile_clone/app_route.dart';
 
 import 'package:style_resources/style_resources.dart';
 
@@ -65,14 +67,14 @@ class _SignInBodyState extends State<SignInBody> {
         ),
         const Gaps(vertical: 20),
         PrimaryButton(
+          onTap: () {},
           buttonLabel: 'Kirim',
           color: isActive ? AppPalette.primaryBlue : AppPalette.buttonDisabled,
         ),
         const Gaps(vertical: 20),
         Center(
           child: GestureDetector(
-            onTap: () =>
-                Navigator.pushReplacementNamed(context, '/signin-with-another'),
+            onTap: () => context.goNamed(Routes.signinWithAnotherMethod.name),
             child: Text(
               'Masuk menggunakan metode lain',
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(

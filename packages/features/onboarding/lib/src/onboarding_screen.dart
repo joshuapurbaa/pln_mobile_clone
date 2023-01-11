@@ -1,5 +1,7 @@
 import 'package:components_library/components_library.dart';
 import 'package:flutter/material.dart';
+import 'package:pln_mobile_clone/app_state_manager.dart';
+import 'package:provider/provider.dart';
 import 'package:style_resources/style_resources.dart';
 
 import 'widgets/dot_indicator.dart';
@@ -38,10 +40,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: AppSize.size10),
-            child: Center(
-              child: Text(
-                'Lewati',
-                style: Theme.of(context).textTheme.titleSmall,
+            child: GestureDetector(
+              onTap: () {
+                Provider.of<AppStateManager>(context, listen: false)
+                    .onboarded();
+              },
+              child: Center(
+                child: Text(
+                  'Lewati',
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
               ),
             ),
           ),
@@ -78,9 +86,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: AppSize.size30),
+              padding: EdgeInsets.only(
+                bottom: AppSize.size30,
+                left: AppSize.size15,
+                right: AppSize.size15,
+              ),
               child: isLastIndex
-                  ? const PrimaryButton(
+                  ? PrimaryButton(
+                      onTap: () {
+                        Provider.of<AppStateManager>(context, listen: false)
+                            .onboarded();
+                      },
                       color: AppPalette.primaryBlue,
                       buttonLabel: 'Lanjutkan',
                     )

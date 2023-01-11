@@ -39,9 +39,10 @@ class LupaPasswordScreen extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            const PrimaryButton(
+            PrimaryButton(
+              onTap: () => Navigator.pop(context),
               color: AppPalette.primaryBlue,
-              buttonLabel: 'Masuk',
+              buttonLabel: 'Kirim',
             ),
             const Gaps(vertical: 30),
           ],

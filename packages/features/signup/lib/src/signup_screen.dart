@@ -71,7 +71,8 @@ class SignupScreen extends StatelessWidget {
           const Gaps(vertical: 25),
           const ReferralContainer(),
           const Gaps(vertical: 25),
-          const PrimaryButton(
+          PrimaryButton(
+            onTap: () {},
             color: AppPalette.primaryBlue,
             buttonLabel: 'Daftar',
           ),

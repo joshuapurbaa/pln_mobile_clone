@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pln_mobile_clone/app_route.dart';
+import 'package:pln_mobile_clone/app_state_manager.dart';
+import 'package:pln_mobile_clone/dependencies_injection.dart';
 import 'package:provider/provider.dart';
 import 'package:signin/signin.dart';
 import 'package:style_resources/style_resources.dart';
@@ -20,20 +22,18 @@ class App extends StatelessWidget {
             ChangeNotifierProvider(
               create: (context) => SignInProvider(),
             ),
+            ChangeNotifierProvider(
+              create: (_) => sl<AppStateManager>(),
+            )
           ],
           child: MaterialApp.router(
             debugShowCheckedModeBanner: false,
             title: 'PLN Mobile Clone',
             theme: AppTheme.light(),
-            routerConfig: AppRoute.goRouter,
-            // routes: {
-            //   '/': (context) => const BerandaScreen(),
-            //   '/signup': (context) => const SignupScreen(),
-            //   '/signin-with-another': (context) =>
-            //       const SignInAnotherMethodScreen(),
-            //   '/signin-with-email': (context) => const SignInWithEmailScreen(),
-            //   '/lupa-passoword': (context) => const LupaPasswordScreen(),
-            // },
+            routerDelegate: AppRoute.goRouter.routerDelegate,
+            routeInformationParser: AppRoute.goRouter.routeInformationParser,
+            routeInformationProvider:
+                AppRoute.goRouter.routeInformationProvider,
           ),
         );
       },

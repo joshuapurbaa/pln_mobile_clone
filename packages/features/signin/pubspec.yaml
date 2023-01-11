@@ -12,8 +12,11 @@ dependencies:
     path: ../../style_resources
   components_library:
     path: ../../components_library
+  pln_mobile_clone:
+    path: ../../../../pln_mobile_clone
 
   provider: ^6.0.5
+  go_router: ^6.0.1
 
 dev_dependencies:
   flutter_test:

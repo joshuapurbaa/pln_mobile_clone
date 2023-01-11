@@ -1,6 +1,8 @@
 import 'package:components_library/components_library.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pln_mobile_clone/app_route.dart';
 import 'package:provider/provider.dart';
 import 'package:signin/signin.dart';
 import 'package:signin/src/widgets/privacy_checkbox.dart';
@@ -9,8 +11,8 @@ import 'package:style_resources/style_resources.dart';
 import '../widgets/appbar_content.dart';
 import '../widgets/button_with_icon.dart';
 
-class SignInAnotherMethodScreen extends StatelessWidget {
-  const SignInAnotherMethodScreen({super.key});
+class SigninWithAnotherMethodScreen extends StatelessWidget {
+  const SigninWithAnotherMethodScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,7 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                         labelColor: AppPalette.white,
                         iconColor: AppPalette.white,
                         ctx: context,
-                        goTo: '/signin-with-email',
+                        goTo: Routes.signinWithEmail.name,
                       ),
                       const Gaps(vertical: 7),
                       if (val)
@@ -117,7 +119,7 @@ class SignInAnotherMethodScreen extends StatelessWidget {
                             TextSpan(
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  Navigator.pushNamed(context, '/signup');
+                                  context.goNamed(Routes.signup.name);
                                 },
                               text: 'Daftar sekarang',
                               style: Theme.of(context)
