@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:onboarding/onboarding.dart';
 import 'package:pln_mobile_clone/app_route.dart';
 import 'package:pln_mobile_clone/app_state_manager.dart';
 import 'package:pln_mobile_clone/dependencies_injection.dart';
@@ -24,7 +25,10 @@ class App extends StatelessWidget {
             ),
             ChangeNotifierProvider(
               create: (_) => sl<AppStateManager>(),
-            )
+            ),
+            ChangeNotifierProvider(
+              create: (_) => OnboardingProvider(),
+            ),
           ],
           child: MaterialApp.router(
             debugShowCheckedModeBanner: false,

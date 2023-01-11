@@ -1,108 +1,34 @@
 import 'package:components_library/components_library.dart';
 import 'package:flutter/material.dart';
-import 'package:pln_mobile_clone/app_state_manager.dart';
+import 'package:onboarding/src/providers/onboarding_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:style_resources/style_resources.dart';
 
-import 'widgets/dot_indicator.dart';
 import 'widgets/onboard_page_view.dart';
+import 'widgets/onboarding_appbar.dart';
+import 'widgets/onboarding_button.dart';
 
-class OnboardingScreen extends StatefulWidget {
+class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  final _controller = PageController();
-
-  bool isLastIndex = false;
-  bool showArrowBack = false;
-  @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<OnboardingProvider>(context, listen: false);
     return Scaffold(
       backgroundColor: AppPalette.white,
-      appBar: AppBar(
-        leading: showArrowBack
-            ? IconButton(
-                onPressed: () {
-                  _controller.previousPage(
-                      duration: const Duration(milliseconds: 100),
-                      curve: Curves.easeInToLinear);
-                },
-                icon: const Icon(
-                  Icons.arrow_back,
-                ),
-                color: AppPalette.black,
-              )
-            : const SizedBox(),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: AppSize.size10),
-            child: GestureDetector(
-              onTap: () {
-                Provider.of<AppStateManager>(context, listen: false)
-                    .onboarded();
-              },
-              child: Center(
-                child: Text(
-                  'Lewati',
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
-              ),
-            ),
-          ),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size(double.infinity, 100),
+        child: OnboardingAppBar(),
       ),
       body: Stack(
         children: [
           OnboardPageView(
-            controller: _controller,
+            controller: provider.controller,
             onPageChanged: (int index) {
-              switch (index) {
-                case 2:
-                  setState(() {
-                    isLastIndex = true;
-                    showArrowBack = true;
-                  });
-                  break;
-                case 1:
-                  setState(() {
-                    showArrowBack = true;
-                    isLastIndex = false;
-                  });
-                  break;
-                default:
-                  setState(
-                    () {
-                      isLastIndex = false;
-                      showArrowBack = false;
-                    },
-                  );
-              }
+              provider.onSliding(index);
             },
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: EdgeInsets.only(
-                bottom: AppSize.size30,
-                left: AppSize.size15,
-                right: AppSize.size15,
-              ),
-              child: isLastIndex
-                  ? PrimaryButton(
-                      onTap: () {
-                        Provider.of<AppStateManager>(context, listen: false)
-                            .onboarded();
-                      },
-                      color: AppPalette.primaryBlue,
-                      buttonLabel: 'Lanjutkan',
-                    )
-                  : DotIndicator(controller: _controller),
-            ),
-          ),
+          const OnboardingButton(),
           const Gaps(
             vertical: 20,
           )
