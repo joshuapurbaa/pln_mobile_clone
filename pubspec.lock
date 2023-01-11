@@ -344,7 +344,7 @@ packages:
       path: "packages/features/profile"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   provider:
     dependency: "direct main"
     description:

@@ -38,7 +38,8 @@ class AppTheme {
     ),
     titleLarge: GoogleFonts.nunitoSans(
       fontSize: AppSize.titleLarge,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w700,
+      color: AppPalette.black,
     ),
     // SigninWithEmail (AppBar)
     titleMedium: GoogleFonts.nunitoSans(

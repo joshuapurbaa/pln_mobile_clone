@@ -97,7 +97,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return NavBarTabItem(
       icon: Image.asset(
         'assets/$icon.png',
-        width: AppSize.size30,
+        width: AppSize.size24,
         package: 'bottom_navigation',
         color: _iconColor(_currentIndex, index),
       ),
