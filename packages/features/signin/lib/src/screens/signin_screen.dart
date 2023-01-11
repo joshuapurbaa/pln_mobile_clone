@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:style_resources/style_resources.dart';
 
-import '../widgets/appbar_content.dart';
-import '../widgets/signin_body.dart';
+import '../widgets/widgets.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});

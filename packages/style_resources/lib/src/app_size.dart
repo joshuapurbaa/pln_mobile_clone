@@ -52,4 +52,5 @@ class AppSize {
   static double size200 = 200.w;
   static double size260 = 260.w;
   static double size300 = 300.w;
+  static double size336 = -336.w;
 }
