@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pln_mobile_clone">
    <application
-        android:label="pln_mobile_clone"
+        android:label="PLN Mobile Clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -27,6 +27,7 @@ class AppStateManager extends ChangeNotifier {
 
   void signout() async {
     _signedIn = false;
+
     await sl<PrefManager>().invalidate();
     await initializeApp();
     notifyListeners();

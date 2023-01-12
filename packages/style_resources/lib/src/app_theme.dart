@@ -98,7 +98,8 @@ class AppTheme {
           foregroundColor: AppPalette.black,
           titleSpacing: 0,
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
+            statusBarColor: AppPalette.transparent,
+            statusBarIconBrightness: Brightness.dark,
           ),
           backgroundColor: AppPalette.white,
           elevation: 0,
