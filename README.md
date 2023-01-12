@@ -13,4 +13,4 @@ This app shows UI and flow based on the PLN Mobile app that is available on the 
 
 - Clone this project
 - Run `make get` (make sure you have 'make' install on your computer: https://stackoverflow.com/a/54086635/17352451) 
-- Run `flutter run lib/main_prd.dart` 
+- Run `flutter run lib/main.dart` 
