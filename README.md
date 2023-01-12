@@ -1,16 +1,16 @@
-# pln_mobile_clone
+# PLN Mobile Clone 📱
 
-A new Flutter project.
+This app shows UI and flow based on the PLN Mobile app that is available on the Google Play Store.
 
-## Getting Started
+## Pre-requisites 📐
 
-This project is a starting point for a Flutter application.
+| Technology | Recommended Version | Installation Guide                                                    |
+|------------|---------------------|-----------------------------------------------------------------------|
+| Flutter    | v3.3.10             | [Flutter Official Docs](https://flutter.dev/docs/get-started/install) |
+| Dart       | v2.18.6             | Installed automatically with Flutter                                  |
 
-A few resources to get you started if this is your first Flutter project:
+## Get Started 🚀
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Clone this project
+- Run `make get` (make sure you have 'make' install on your computer: https://stackoverflow.com/a/54086635/17352451) 
+- Run `flutter run lib/main_prd.dart` 
